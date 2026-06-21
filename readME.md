@@ -64,4 +64,4 @@
 - Clean Code & Modular Design Principles
 
 # Base URL
-https://commerce-engine-backend-api.onrender.com
+https://commerce-engine-backend-api.onrender.com/api/v1/product/all-products
