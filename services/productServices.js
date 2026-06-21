@@ -8,7 +8,7 @@ const createProductService = async (data) => {
      throw createError('All field must not be empty!', 400)
   }
 
-   console.log(`this is image_url: ${image.url}`)
+    console.log(`this is image_url: ${image.url}`)
     console.log(`this is image_u: ${image.public_id}`)
 
   if (!image.url || !image.public_id) {
@@ -38,7 +38,7 @@ const getAllProductService = async () => {
 
     // const products = await Product.find({}).populate('category').populate('createdBy');
 
-    const products = await Product.find({});
+    const products = await Product.find({}).select('-createdAt -updatedAt -__v');
 
     if (products.length === 0) {
       throw createError('No products found!', 404)
@@ -103,6 +103,9 @@ const deleteProductService = async (productId,) => {
 
   return deleteProduct;
 };
+
+
+
 module.exports = { 
   createProductService,
   getAllProductService, 

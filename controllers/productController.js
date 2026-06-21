@@ -19,8 +19,8 @@ const createProductController = async (req, res) => {
       });
     }
 
-    console.log("BODY RECEIVED:", req.body);
-    console.log("FILE RECEIVED:", req.file);
+    // console.log("BODY RECEIVED:", req.body);
+    // console.log("FILE RECEIVED:", req.file);
 
     if (!req.file?.path) {
       console.log("No image file");
@@ -30,11 +30,11 @@ const createProductController = async (req, res) => {
       });
     }
 
-    console.log("Uploading to Cloudinary...");
+    // console.log("Uploading to Cloudinary...");
 
     const uploadResult = await uploadToCloudinary(req.file.path);
 
-    console.log("Upload Result:", uploadResult);
+    // console.log("Upload Result:", uploadResult);
 
     if (!uploadResult?.url) {
       console.log(" Cloudinary upload failed");
@@ -57,9 +57,9 @@ const createProductController = async (req, res) => {
       createdBy: userId,
     };
 
-    console.log("FINAL PRODUCT DATA:", productData);
+    // console.log("FINAL PRODUCT DATA:", productData);
 
-    console.log("Saving to database...");
+    // console.log("Saving to database...");
 
     const product = await createProductService(productData);
 
@@ -162,6 +162,8 @@ const deleteProductController = async (req, res) => {
 
   }
 };
+
+
 
 module.exports = {
   createProductController,
