@@ -63,5 +63,5 @@
 - Scalable Backend Development
 - Clean Code & Modular Design Principles
 
-# Base URL
+# Base Endpoints
 https://commerce-engine-backend-api.onrender.com/api/v1/product/all-products
